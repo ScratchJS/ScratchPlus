@@ -71,5 +71,37 @@ new (function() {
 	ScratchExtensions.register('Scratch++ (Math/Logic)', descriptor, ext); // Name of the extension.
 	console.log("Scratch++ (Math/Logic) Successfully installed")
 })();
+new (function() {
+	var ext = this;
+	var descriptor = {
+		blocks: [
+      			['b','Is Student','isstudent']
+			['b','Is Teacher','isteacher']
+			['b','Is Admin','isadmin']
+		],
+		url : '' // This is the URL for when someone clicks "learn more"
+	};
+	ext._shutdown = function() {
+		
+	};
+	
+	ext._getStatus = function() {
+		return {status:2, msg:'Ready'}; // Returning status defines the colour of the light beside the blocks.
+	};
+	
+	// Scratch++ (Userstats) Functions
+  	ext.isadmin = function() {
+		return Scratch.INIT_DATA.ADMIN;
+	};
+	ext.isteacher = function() {
+		return Scratch.INIT_DATA.LOGGED_IN_USER.model.is_educator;
+	};
+	ext.isstudent = function() {
+		return Scratch.INIT_DATA.LOGGED_IN_USER.model.is_student;
+	};
+
+	ScratchExtensions.register('Scratch++ (Userstats)', descriptor, ext); // Name of the extension.
+	console.log("Scratch++ (Userstats) Successfully installed")
+})();
 
 ScratchExtensions.notify('Scratch++ Successfully installed');
