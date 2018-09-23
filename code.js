@@ -39,7 +39,7 @@ new (function() {
 	var ext = this;
 	var descriptor = {
 		blocks: [
-      			['r','%n ^ %n','getpow'],
+      			['r','%n ^ %n','getpow',false],
       			['r','Pi','getpi',false],
       			['r','E','gete',false],
       			['b','%s != %s','getnotequal',false,false]
