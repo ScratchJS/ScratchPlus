@@ -102,6 +102,7 @@ new (function() {
 
 	ScratchExtensions.register('Scratch++ (Userstats)', descriptor, ext); // Name of the extension.
 	console.log("Scratch++ (Userstats) Successfully installed")
+	alert("test")
 })();
 
 ScratchExtensions.notify('Scratch++ Successfully installed');
