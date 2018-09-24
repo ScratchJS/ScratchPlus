@@ -2,7 +2,7 @@ new (function() {
 	var ext = this;
 	var descriptor = {
 		blocks: [
-			[' ','By @Raytracing']
+			[' ','By @Raytracing','null']
 		],
 		url : '' // This is the URL for when someone clicks "learn more"
 	};
@@ -15,17 +15,8 @@ new (function() {
 	};
 	
 	// Scratch++ Functions
-  	ext.gbanner = function(Banner) {    
+  	ext.null = function(Banner) {    
     		ScratchExtensions.notify(Banner);
-  	};
-  	ext.gshout = function(Shout) {    
-    		alert(Shout);
-  	};
-  	ext.glog = function(Log) {    
-    		console.log(Log)
-  	};
-  	ext.gauto = function() {    
-    		return true;
   	};
 
 	ScratchExtensions.register('Scratch++', descriptor, ext); // Name of the extension.
