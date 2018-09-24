@@ -2,10 +2,7 @@ new (function() {
 	var ext = this;
 	var descriptor = {
 		blocks: [
-			[' ','Display banner %s','gbanner'],
-      			[' ','Display alert %s','gshout'],
-      			[' ','Console log %s','glog'],
-      			['h','Start automatically','gauto'],
+			[' ','By @Raytracing'],
 		],
 		url : '' // This is the URL for when someone clicks "learn more"
 	};
@@ -78,6 +75,7 @@ new (function() {
       			['b','Is Student','isstudent'],
 			['b','Is Teacher','isteacher'],
 			['b','Is Admin','isadmin']
+			['r','User ID','userid']
 		],
 		url : '' // This is the URL for when someone clicks "learn more"
 	};
@@ -99,9 +97,68 @@ new (function() {
 	ext.isstudent = function() {
 		return Scratch.INIT_DATA.LOGGED_IN_USER.model.is_student;
 	};
+	ext.userid = function() {
+		return Scratch.INIT_DATA.LOGGED_IN_USER.model.id;
+	};
 
 	ScratchExtensions.register('Scratch++ (Userstats)', descriptor, ext); // Name of the extension.
 	console.log("Scratch++ (Userstats) Successfully installed")
+})();
+new (function() {
+	var ext = this;
+	var descriptor = {
+		blocks: [
+			[' ','Display banner %s','gbanner'],
+      			[' ','Display alert %s','gshout'],
+      			[' ','Console log %s','glog'],
+			[' ','Set Fullscreen','full'],
+			[' ','New Remix','remix'],
+			[' ','Prompt Join Scratch','join'],
+			[' ','Prompt Login Scratch','login']
+			[' ','Logout Scratch User','logout']
+		],
+		url : '' // This is the URL for when someone clicks "learn more"
+	};
+	ext._shutdown = function() {
+		
+	};
+	
+	ext._getStatus = function() {
+		return {status:2, msg:'Ready'}; // Returning status defines the colour of the light beside the blocks.
+	};
+	
+	// Scratch++ Functions
+  	ext.gbanner = function(Banner) {    
+    		ScratchExtensions.notify(Banner);
+  	};
+  	ext.gshout = function(Shout) {    
+    		alert(Shout);
+  	};
+  	ext.glog = function(Log) {    
+    		console.log(Log)
+  	};
+  	ext.gauto = function() {    
+    		return true;
+  	};
+	ext.full = function() {    
+    		JSsetPresentationMode("false");
+  	};
+	ext.remix = function() {    
+    		JSremixProject();
+  	};
+	ext.join = function() {    
+    		JSjoinScratch()
+  	};
+	ext.login = function() {    
+    		JSlogin()
+  	};
+	ext.logout = function() {
+		JSlogout()
+	};
+
+	ScratchExtensions.register('Scratch++ (Interaction)', descriptor, ext); // Name of the extension.
+  	
+	console.log("Scratch++ (Interaction) Successfully installed")
 })();
 
 ScratchExtensions.notify('Scratch++ Successfully installed');
