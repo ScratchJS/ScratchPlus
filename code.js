@@ -75,8 +75,8 @@ new (function() {
 	var ext = this;
 	var descriptor = {
 		blocks: [
-      			['b','Is Student','isstudent']
-			['b','Is Teacher','isteacher']
+      			['b','Is Student','isstudent'],
+			['b','Is Teacher','isteacher'],
 			['b','Is Admin','isadmin']
 		],
 		url : '' // This is the URL for when someone clicks "learn more"
@@ -102,7 +102,6 @@ new (function() {
 
 	ScratchExtensions.register('Scratch++ (Userstats)', descriptor, ext); // Name of the extension.
 	console.log("Scratch++ (Userstats) Successfully installed")
-	alert("test")
 })();
 
 ScratchExtensions.notify('Scratch++ Successfully installed');
