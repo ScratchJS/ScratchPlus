@@ -2,7 +2,7 @@ new (function() {
 	var ext = this;
 	var descriptor = {
 		blocks: [
-			[' ','By @Raytracing'],
+			[' ','By @Raytracing']
 		],
 		url : '' // This is the URL for when someone clicks "learn more"
 	};
@@ -74,7 +74,7 @@ new (function() {
 		blocks: [
       			['b','Is Student','isstudent'],
 			['b','Is Teacher','isteacher'],
-			['b','Is Admin','isadmin']
+			['b','Is Admin','isadmin'],
 			['r','User ID','userid']
 		],
 		url : '' // This is the URL for when someone clicks "learn more"
@@ -114,7 +114,7 @@ new (function() {
 			[' ','Set Fullscreen','full'],
 			[' ','New Remix','remix'],
 			[' ','Prompt Join Scratch','join'],
-			[' ','Prompt Login Scratch','login']
+			[' ','Prompt Login Scratch','login'],
 			[' ','Logout Scratch User','logout']
 		],
 		url : '' // This is the URL for when someone clicks "learn more"
