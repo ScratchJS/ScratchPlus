@@ -1,3 +1,10 @@
+// Scratch++ by @Raytracing
+
+
+
+
+
+// Create by block
 new (function() {
 	var ext = this;
 	var descriptor = {
@@ -15,22 +22,23 @@ new (function() {
 	};
 	
 	// Scratch++ Functions
-  	ext.null = function(Banner) {    
-    		ScratchExtensions.notify(Banner);
+  	ext.null = function() {    
   	};
 
 	ScratchExtensions.register('Scratch++', descriptor, ext); // Name of the extension.
   	
 	console.log("Scratch++ Successfully installed")
 })();
+
+// Math Lib
+
 new (function() {
 	var ext = this;
 	var descriptor = {
 		blocks: [
       			['r','%n ^ %n','getpow',10,10,false],
       			['r','Pi','getpi',false],
-      			['r','E','gete',false],
-      			['b','%s != %s','getnotequal',false,false]
+      			['r','E','gete',false]
 		],
 		url : '' // This is the URL for when someone clicks "learn more"
 	};
@@ -49,16 +57,51 @@ new (function() {
   	ext.gete = function() {
     		return 2.718281828459045235360287471;
   	};
-   	ext.getnotequal = function(n1,n2) {
-    		return n1 != n2;
-  	};
    	ext.getpow = function(n1,n2) {
     		return Math.pow(n1,n2);
   	};
 
-	ScratchExtensions.register('Scratch++ (Math/Logic)', descriptor, ext); // Name of the extension.
-	console.log("Scratch++ (Math/Logic) Successfully installed")
+	ScratchExtensions.register('Scratch++ (Math)', descriptor, ext); // Name of the extension.
+	console.log("Scratch++ (Math) Successfully installed")
 })();
+
+// Logic Lib
+
+new (function() {
+	var ext = this;
+	var descriptor = {
+		blocks: [
+      			['b','%s != %s','getnotequal',false,false],
+			['b','True','True',false],
+			['b','False','False',false]
+		],
+		url : '' // This is the URL for when someone clicks "learn more"
+	};
+	ext._shutdown = function() {
+		
+	};
+	
+	ext._getStatus = function() {
+		return {status:2, msg:'Ready'}; // Returning status defines the colour of the light beside the blocks.
+	};
+	
+	// Scratch++ (Logic) Functions
+   	ext.getnotequal = function(n1,n2) {
+    		return n1 != n2;
+	};
+	ext.True = function() {
+    		return true;
+	};
+	ext.False = function() {
+    		return false;
+	};
+
+	ScratchExtensions.register('Scratch++ (Logic)', descriptor, ext); // Name of the extension.
+	console.log("Scratch++ (Logic) Successfully installed")
+})();
+
+// Userstats Lib
+
 new (function() {
 	var ext = this;
 	var descriptor = {
@@ -95,6 +138,9 @@ new (function() {
 	ScratchExtensions.register('Scratch++ (Userstats)', descriptor, ext); // Name of the extension.
 	console.log("Scratch++ (Userstats) Successfully installed")
 })();
+
+// Interaction Lib
+
 new (function() {
 	var ext = this;
 	var descriptor = {
